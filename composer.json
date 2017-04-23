@@ -1,0 +1,25 @@
+{
+    "name": "usox/hack-uuid-generator",
+    "description": "Generate rfc4122 version 4 uuids",
+    "type": "library",
+    "keywords": ["uuid", "hack", "hhvm", "rfc4122"],
+    "license": "MIT",
+    "authors": [
+	{
+	    "name": "Daniel Jakob",
+	    "email": "dev@usox.org",
+	    "role": "Developer"
+	}
+    ],
+    "require": {
+	"hhvm": ">=3.13"
+    },
+    "require-dev": {
+	"hackpack/hackunit": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+	    "Usox\\HackUuidGen\\": "src"
+        }
+    }
+}
