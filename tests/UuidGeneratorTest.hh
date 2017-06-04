@@ -1,4 +1,4 @@
-<?hh // strict
+<?hh
 namespace Usox\HackUuidGen;
 
 use HackPack\HackUnit\Contract\Assert;
