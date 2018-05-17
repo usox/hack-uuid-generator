@@ -1,30 +1,32 @@
-<?hh
+<?hh // strict
 namespace Usox\HackUuidGen;
 
-use HackPack\HackUnit\Contract\Assert;
+use function Facebook\FBExpect\expect;
+use HH\Lib\Str;
 
-final class UuidGeneratorTest {
+final class UuidGeneratorTest extends \PHPUnit_Framework_TestCase {
 
-	<<Test>>
-	public function testGenerateGeneratesDifferentStrings(Assert $assert): void {
+	public function testGenerateGeneratesDifferentStrings(): void {
 		$generator = new UuidGenerator();
-		$assert->string(
+
+		expect(
 			$generator->generate()
 		)
-		->not()
-		->is($generator->generate());
+		->toNotBeSame(
+			$generator->generate()
+			);
 	}
 
-	<<Test>>
-	public function testGenerateReturnsStringInExpectedFormat(Assert $assert): void {
+	public function testGenerateReturnsStringInExpectedFormat(): void {
 		$generator = new UuidGenerator();
 
 		$uuid = $generator->generate();
 
-		$assert->string($uuid)->hasLength(36);
+		expect(
+			Str\length($uuid)
+		)
+		->toBeSame(36);
 
-		$pattern = '/[a-z0-9]{8}+-[a-z0-9]{4}+-[a-z0-9]{4}+-[a-z0-9]{4}+-[a-z0-9]{12}+/';
-
-		$assert->string($uuid)->matches($pattern);
+		expect($uuid)->toMatchRegExp('/[a-z0-9]{8}+-[a-z0-9]{4}+-[a-z0-9]{4}+-[a-z0-9]{4}+-[a-z0-9]{12}+/');
 	}
 }

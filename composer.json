@@ -2,24 +2,33 @@
     "name": "usox/hack-uuid-generator",
     "description": "Generate rfc4122 version 4 uuids",
     "type": "library",
-    "keywords": ["uuid", "hack", "hhvm", "rfc4122"],
+    "keywords": [
+        "uuid",
+        "hack",
+        "hhvm",
+        "rfc4122"
+    ],
     "license": "MIT",
     "authors": [
-	{
-	    "name": "Daniel Jakob",
-	    "email": "dev@usox.org",
-	    "role": "Developer"
-	}
+        {
+            "name": "Daniel Jakob",
+            "email": "dev@usox.org",
+            "role": "Developer"
+        }
     ],
     "require": {
-	"hhvm": ">=3.13"
+        "hhvm": ">=3.24",
+        "hhvm/hsl": "^1.4"
     },
     "require-dev": {
-	"hackpack/hackunit": "^1.0"
+        "facebook/fbexpect": "^1"
     },
     "autoload": {
         "psr-4": {
-	    "Usox\\HackUuidGen\\": "src"
+            "Usox\\HackUuidGen\\": "src"
         }
+    },
+    "scripts": {
+        "tests": "vendor/bin/phpunit -c phpunit.xml"
     }
 }
