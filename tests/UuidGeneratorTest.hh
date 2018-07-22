@@ -4,7 +4,7 @@ namespace Usox\HackUuidGen;
 use function Facebook\FBExpect\expect;
 use HH\Lib\Str;
 
-final class UuidGeneratorTest extends \PHPUnit_Framework_TestCase {
+final class UuidGeneratorTest extends \Facebook\HackTest\HackTestCase {
 
 	public function testGenerateGeneratesDifferentStrings(): void {
 		$generator = new UuidGenerator();

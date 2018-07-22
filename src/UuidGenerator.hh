@@ -1,7 +1,7 @@
 <?hh // strict
 namespace Usox\HackUuidGen;
 
-use HH\Lib\Str;
+use namespace HH\Lib\Str;
 
 final class UuidGenerator implements UuidGeneratorInterface {
 
